@@ -1,4 +1,4 @@
-package com.nisum.portal.hr.paf.domain;
+package com.restrobooking.domain;
 
 import lombok.Getter;
 import lombok.Setter;

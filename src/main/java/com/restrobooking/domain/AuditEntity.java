@@ -1,4 +1,4 @@
-package com.nisum.portal.hr.paf.domain;
+package com.restrobooking.domain;
 
 import java.util.Date;
 
@@ -7,7 +7,6 @@ import lombok.Setter;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.annotation.Version;

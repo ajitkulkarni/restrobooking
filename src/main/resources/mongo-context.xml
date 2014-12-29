@@ -8,7 +8,7 @@
 	
 	
   	<mongo:auditing auditor-aware-ref="entityAuditor"/>
-	<bean id="entityAuditor" class="com.nisum.portal.hr.paf.repository.PAFAuditor"/>
+	<bean id="entityAuditor" class="com.restrobooking.repository.PAFAuditor"/>
    
     <bean id="mongoClient" class="com.mongodb.MongoClient"/>
 
@@ -32,5 +32,5 @@
       <constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
       <constructor-arg name="mongoConverter" ref="mappingMongoConverter"/>
    </bean>
-   <mongo:repositories base-package="com.nisum.portal.hr.paf.repository" mongo-template-ref="mongoTemplate"/>
+   <mongo:repositories base-package="com.restrobooking.repository" mongo-template-ref="mongoTemplate"/>
 </beans>

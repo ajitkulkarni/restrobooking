@@ -1,10 +1,10 @@
-package com.nisum.portal.hr.paf.service;
+package com.restrobooking.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nisum.portal.hr.paf.domain.EmployeePerformanceInfo;
-import com.nisum.portal.hr.paf.repository.EmployeePerformanceInfoRepository;
+import com.restrobooking.domain.EmployeePerformanceInfo;
+import com.restrobooking.repository.EmployeePerformanceInfoRepository;
 
 @Service
 public class SampleService {

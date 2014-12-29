@@ -1,4 +1,4 @@
-package com.nisum.portal.hr.paf.exception;
+package com.restrobooking.exception;
 
 public class InvalidInputException extends Exception {
 	

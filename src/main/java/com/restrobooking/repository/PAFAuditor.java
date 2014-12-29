@@ -1,4 +1,4 @@
-package com.nisum.portal.hr.paf.repository;
+package com.restrobooking.repository;
 
 import org.springframework.data.domain.AuditorAware;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.nisum.portal.hr.paf.controller;
+package com.restrobooking.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.nisum.portal.hr.paf.service.SampleService;
+import com.restrobooking.service.SampleService;
 
 @Controller
 public class SampleController {

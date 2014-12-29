@@ -1,4 +1,4 @@
-package com.nisum.portal.hr.paf.util;
+package com.restrobooking.util;
 
 import java.lang.reflect.Method;
 
@@ -7,7 +7,7 @@ import org.springframework.web.method.annotation.ExceptionHandlerMethodResolver;
 import org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver;
 import org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod;
 
-import com.nisum.portal.hr.paf.controller.ExceptionAdviceController;
+import com.restrobooking.controller.ExceptionAdviceController;
 
 public final class ExceptionHandlerAdviceUtil {
 	public static ExceptionHandlerExceptionResolver createExceptionResolver() {

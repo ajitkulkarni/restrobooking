@@ -1,4 +1,4 @@
-package com.nisum.portal.hr.paf.exception;
+package com.restrobooking.exception;
 public class DataNotFoundException extends Exception {
 
 	private static final long serialVersionUID = 7676563599007944559L;
