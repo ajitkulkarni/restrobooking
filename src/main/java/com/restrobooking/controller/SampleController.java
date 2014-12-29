@@ -17,7 +17,7 @@ public class SampleController {
 	
 	@RequestMapping(value="/sample", method=RequestMethod.GET)
 	public ResponseEntity<String> getHelloWorld(){
-		service.createRestaurant("some restaurant");
+		service.createRestaurant("1234");
 		return new ResponseEntity<String>("Request Success", HttpStatus.OK);
 	}
 
