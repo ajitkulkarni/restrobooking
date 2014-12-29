@@ -12,9 +12,7 @@ public class RestaurantService {
 	@Autowired
 	private RestaurantRepository restaurantRepository;
 	
-	public void createRestaurant(String data){
-		Restaurant restaurant = new Restaurant();
-		restaurant.setName(data);
+	public void createRestaurant(Restaurant restaurant){
 		restaurantRepository.save(restaurant);
 	}
 	

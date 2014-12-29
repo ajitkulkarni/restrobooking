@@ -5,8 +5,11 @@ import lombok.Setter;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Getter
 @Setter
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Document(collection = "Restaurants")
 public class Restaurant extends AuditEntity{
 	
@@ -20,6 +23,6 @@ public class Restaurant extends AuditEntity{
 	
 	private int capacity;
 	
-	private int contactNumber;
+	private String contactNumber;
 	
 }
