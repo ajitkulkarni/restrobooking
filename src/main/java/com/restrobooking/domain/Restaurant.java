@@ -23,6 +23,6 @@ public class Restaurant extends AuditEntity{
 	
 	private int capacity;
 	
-	private int contactNumber;
+	private String contactNumber;
 	
 }
