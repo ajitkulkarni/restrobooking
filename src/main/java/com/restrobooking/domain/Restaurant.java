@@ -13,5 +13,15 @@ public class Restaurant extends AuditEntity{
 	
 	@Id
 	private String name;
-
+	
+	private String location;
+	
+	private String street;
+	
+	private String city;
+	
+	private int capacity;
+	
+	private int contactNumber;
+	
 }
