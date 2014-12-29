@@ -6,11 +6,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 </head>
 <body>
-	<div class="container">
-		<h2>Restaurant onBoarding form</h2>
+<script>
+function restroController($scope) {
+	$scope.fname = "FName",
+	$scope.lname = "LName",
+	$scope.fullName = function() {
+        return $scope.fname + " " + $scope.lname;
+    }
+	
+}
+</script>
+	<div class="container" ng-app="" ng-controller="restroController">
+	First Name: <input type="text" ng-model="fname"><br>
+Last Name: <input type="text" ng-model="lname"><br>
+<br>
+Full Name: {{fullName()}}
+		<h2>Restaurant onBoarding Form</h2>
 		<form role="form">
 			<div class="form-group">
 				<label for="restroname">Restaurant Name:</label> <input type="text"
