@@ -1,5 +1,7 @@
 package com.restrobooking.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,4 +21,14 @@ public class RestaurantService {
 	public Restaurant getRestaurant(String name){
 		return restaurantRepository.findByName(name);
 	}
+	
+	public List<Restaurant> getAllRestaurant(){
+		return (List<Restaurant>) restaurantRepository.findAll();
+	}
+	
+	public List<Restaurant> getRestaurantByLocation(String location){
+		return (List<Restaurant>) restaurantRepository.findByLocation(location);
+	}
+	
+
 }
