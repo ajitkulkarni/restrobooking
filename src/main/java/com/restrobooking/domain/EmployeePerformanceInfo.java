@@ -3,7 +3,6 @@ package com.restrobooking.domain;
 import lombok.Getter;
 import lombok.Setter;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
@@ -11,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "EmployeePerformanceInfo")
 public class EmployeePerformanceInfo extends AuditEntity{
 	
-	@Id
+//	@Id
 	private String name;
 
 }

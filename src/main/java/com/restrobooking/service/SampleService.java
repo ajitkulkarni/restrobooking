@@ -3,19 +3,19 @@ package com.restrobooking.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.restrobooking.domain.EmployeePerformanceInfo;
-import com.restrobooking.repository.EmployeePerformanceInfoRepository;
+import com.restrobooking.domain.Restaurant;
+import com.restrobooking.repository.RestaurantRepository;
 
 @Service
 public class SampleService {
 
 	
 	@Autowired
-	private EmployeePerformanceInfoRepository employeePerformanceInfoRepository;
+	private RestaurantRepository restaurantRepository;
 	
-	public void prepareEmployeePerformanceInfo(String data){
-		EmployeePerformanceInfo employeePerformanceInfo = new EmployeePerformanceInfo();
-		employeePerformanceInfo.setName(data);
-		employeePerformanceInfoRepository.save(employeePerformanceInfo);
+	public void createRestaurant(String data){
+		Restaurant restaurant = new Restaurant();
+		restaurant.setName(data);
+		restaurantRepository.save(restaurant);
 	}
 }
