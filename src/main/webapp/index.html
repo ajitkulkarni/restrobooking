@@ -7,57 +7,82 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
-</head>
-<body>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
 <script>
-function restroController($scope) {
-	$scope.fname = "FName",
-	$scope.lname = "LName",
-	$scope.fullName = function() {
-        return $scope.fname + " " + $scope.lname;
-    }
-	
-}
+$(document).ready(function() {
+    
+    $('form').submit(function(event) {
+      
+    	  $.ajax({
+            type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+            url         : 'resources/restaurant', // the url where we want to POST
+            contentType : 'application/json',
+            data        : JSON.stringify({name : $('#restroname').val(), street : $('#streetname').val(),location: $('#location').val(), city: $('#cityselect').val(),capacity: $('#capacity').val(),contactNumber:$('#contactNumber').val()}), // our data object
+            dataType    : 'json',// what type of data do we expect back from the server
+            success     : function(response, status, xhr){
+             
+	        }
+        });
+        event.preventDefault();
+    });
+});
+var validationApp = angular.module('validationApp', []);
+validationApp.controller('validateCtrl', function($scope,$http) {
+	 $scope.city = 'Pune';
+    // function to submit the form after all validation has occurred            
+   });
+
 </script>
-	<div class="container" ng-app="" ng-controller="restroController">
-	First Name: <input type="text" ng-model="fname"><br>
-Last Name: <input type="text" ng-model="lname"><br>
-<br>
-Full Name: {{fullName()}}
+</head>
+<body ng-app="validationApp"  ng-controller="validateCtrl">
+	<div class="container">
+	
 		<h2>Restaurant onBoarding Form</h2>
-		<form role="form">
-			<div class="form-group">
-				<label for="restroname">Restaurant Name:</label> <input type="text"
-					class="form-control" id="restroname"
-					placeholder="Enter Restaurant Name">
+		<form name="restroForm"  novalidate>
+			<div class="form-group" ng-class="{ 'has-error' : restroForm.restroname.$invalid && !restroForm.restroname.$pristine }">
+				<label for="restroname">Restaurant Name*:</label> 
+				<input type="text" name="restroname" class="form-control" id="restroname" ng-model="restaurant.name"
+					placeholder="Enter Restaurant Name" required>
+ 				<span ng-show="restroForm.restroname.$invalid  && !restroForm.restroname.$pristine" class="help-block">Restaurant Name is required.</span>
 			</div>
-			<div class="form-group">
-				<label for="streetname">Street Name:</label> <input type="text"
-					class="form-control" id="streetname"
-					placeholder="Enter Street Name">
+		  	<div class="form-group" ng-class="{'has-error' :restroForm.streetname.$invalid && !restroForm.streetname.$pristine}">
+				<label for="streetname">Street Name:</label> 
+				<input type="text" class="form-control" id="streetname" ng-model="restaurant.street" name="streetname"
+					placeholder="Enter Street Name" required>
+ 				<span class="help-block" ng-show="restroForm.streetname.$invalid && !restroForm.streetname.$pristine" >Street Name is required.</span>
 			</div>
-			<div class="form-group">
-				<label for="location">Location:</label> <input type="text"
-					class="form-control" id="location" placeholder="Enter Location">
+		 	<div class="form-group" ng-class="{'has-error' :restroForm.location.$invalid && !restroForm.location.$pristine}">
+				<label for="location">Location:</label> 
+				<input type="text" ng-model="restaurant.location" name="location" 
+					class="form-control" id="location" placeholder="Enter Location" required>
+ 				<span class="help-block" ng-show="restroForm.location.$invalid && !restroForm.location.$pristine">Location is required.</span>
 			</div>
-			<div class="form-group">
-				<label for="cityselect">City:</label> <select class="form-control"
+			<div class="form-group" ng-class="{'has-error' :restroForm.city.$invalid && !restroForm.city.$pristine}">
+				<label for="cityselect">City:</label>
+				<select class="form-control" name="city" ng-model="city"
 					id="cityselect">
 					<option>Pune</option>
 					<option>Mumbai</option>
 					<option>Chennai</option>
 					<option>Bangalore</option>
 				</select>
+ 				<span class="help-block" ng-show="restroForm.city.$invalid && !restroForm.location.$pristine">City is required.</span>
 			</div>
-			<div class="form-group">
-				<label for="capacity">Capacity:</label> <input type="text"
-					class="form-control" id="capacity" placeholder="Enter Capacity">
+			<div class="form-group" ng-class="{'has-error' :restroForm.capacity.$invalid && !restroForm.capacity.$pristine}">
+				<label for="capacity">Capacity:</label> 
+				<input type="text" ng-model="restaurant.capacity" name="capacity" id="capacity"
+					class="form-control" placeholder="Enter Capacity" required>
+ 				<span class="help-block" ng-show="restroForm.capacity.$invalid && !restroForm.location.$pristine">Capacity is required.</span>
 			</div>
-			<div class="form-group">
-				<label for="contactno">Contact Number:</label> <input type="text"
-					class="form-control" id="city" placeholder="Enter Contact Number">
+			<div class="form-group" ng-class="{'has-error' :restroForm.contactnumber.$invalid && !restroForm.contactnumber.$pristine}">
+				<label for="contactno">Contact Number:</label> 
+				<input type="text" ng-model="restaurant.contactNumber" name="contactnumber" id="contactNumber"
+					class="form-control" placeholder="Enter Contact Number" required>
+ 				<span class="help-block" ng-show="restroForm.contactnumber.$invalid && !restroForm.contactnumber.$pristine">Contact Number is required.</span>
 			</div>
-			<button type="submit" class="btn btn-default">Submit</button>
+			<button type="reset" class="btn btn-default">Reset</button> 
+			<button type="submit" class="btn btn-default" ng-disabled="restroForm.$invalid">Submit</button>
 		</form>
 	</div>
 
