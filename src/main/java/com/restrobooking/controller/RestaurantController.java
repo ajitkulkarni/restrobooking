@@ -35,5 +35,20 @@ public class RestaurantController {
 	public ResponseEntity<List<Restaurant>> getRestaurantsByLocation(@RequestParam(value = "location", required = true) String location){
 		List<Restaurant> restaurants = restaurantService.getRestaurantByLocation(location);
 		return new ResponseEntity<List<Restaurant>>(restaurants, HttpStatus.OK);
+		
+	}
+	
+	@RequestMapping(value="/restaurant/capacity", method=RequestMethod.GET)
+	public ResponseEntity<List<Restaurant>> getRestaurantsByCapacity(@RequestParam(value = "capacity", required = true) int capacity){
+		List<Restaurant> restaurants = restaurantService.getRestaurantByCapacity(capacity);
+		return new ResponseEntity<List<Restaurant>>(restaurants, HttpStatus.OK);
+		
+	}
+	
+	@RequestMapping(value="/restaurant/criteria", method=RequestMethod.GET)
+	public ResponseEntity<List<Restaurant>> getRestaurantsByLocationAndCapacity(@RequestParam(value = "location", required = true) String location,@RequestParam(value = "capacity", required = true) int capacity){
+		List<Restaurant> restaurants = restaurantService.getRestaurantByLocationAndCapacity(location,capacity);
+		return new ResponseEntity<List<Restaurant>>(restaurants, HttpStatus.OK);
+		
 	}
 }

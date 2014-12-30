@@ -29,6 +29,13 @@ public class RestaurantService {
 	public List<Restaurant> getRestaurantByLocation(String location){
 		return (List<Restaurant>) restaurantRepository.findByLocation(location);
 	}
-	
+
+	public List<Restaurant> getRestaurantByCapacity(int capacity) {
+		return (List<Restaurant>) restaurantRepository.findByCapacity(capacity);
+	}
+
+	public List<Restaurant> getRestaurantByLocationAndCapacity(String location, int capacity) {
+		return (List<Restaurant>) restaurantRepository.findByLocationAndCapacity(location,capacity);
+	}
 
 }
