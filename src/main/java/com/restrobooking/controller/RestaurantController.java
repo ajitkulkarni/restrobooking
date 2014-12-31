@@ -51,4 +51,12 @@ public class RestaurantController {
 		return new ResponseEntity<List<Restaurant>>(restaurants, HttpStatus.OK);
 		
 	}
+	
+	@RequestMapping(value="/restaurant/id", method=RequestMethod.GET)
+	public ResponseEntity<Restaurant> getRestaurantById(@RequestParam(value = "id", required = true) String id){
+		Restaurant restaurant = restaurantService.getRestaurantById(id);
+		return new ResponseEntity<Restaurant>(restaurant, HttpStatus.OK);
+	}
+	
+	
 }
