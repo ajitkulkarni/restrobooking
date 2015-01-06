@@ -38,14 +38,19 @@ validationApp.controller('validateCtrl', function($scope,$http) {
 </script>
 </head>
 <body ng-app="validationApp"  ng-controller="validateCtrl">
-	<div class="bg"></div>
-	<div class="container jumbotron" >
 	
-		<h2 align="center">Restaurant onBoarding Form</h2>
-			<div class="alert alert-success" id="successMessage" style="display:none"> Restaurant has been on Boarded successfully</div>			
+	<div class="bg"></div>
+	
+	<div class="container jumbotron" style="margin-bottom: 0px;padding: 15px;">
+	<h2 align="center" style="margin-top: 20px; margin-bottom: 25px;">Restaurant onBoarding Form</h2>
+		
+						
 		
 		<form name="restroForm"  novalidate>
 		<table align="center" class="table" style="width:30%;" >
+		<tr><td>
+		<div align="center" class="alert alert-success" id="successMessage" style="display:none;margin-bottom:8px;padding:5px;"> Restaurant has been on Boarded successfully</div>
+		</td></tr>		
 		<tr ><td>
 			<div class="form-group" ng-class="{ 'has-error' : restroForm.restroname.$invalid && !restroForm.restroname.$pristine }">
 				<label for="restroname">Restaurant Name*:</label> 
